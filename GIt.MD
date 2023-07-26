@@ -380,3 +380,276 @@ Sure, here's an example of how to merge two branches in Git:
     ```
 
 Congratulations, you have successfully merged two branches in Git! Now both the new feature and bug fix are incorporated into the main codebase.
+
+
+
+
+Deleting Data: 
+
+Working Directory Files 
+
+Unstaged Changes 
+
+Staged Changes 
+
+Latest Commits  
+
+Branches 
+
+ 
+
+ 
+
+ 
+
+Working Directory files: 
+
+ 
+
+To delete a file and commit the changes in Git, you can use the following commands: 
+
+  
+
+1. To delete the file: `git rm filename` 
+
+  
+
+   This will remove the file from your local repository. 
+
+  
+
+2. To commit the changes: `git commit -m "Delete filename"` 
+
+  
+
+   This will commit the changes to your local repository along with a message describing the changes made. 
+
+  
+
+  
+
+For example, if you want to delete a file named "example.txt" and commit the changes, you can use the following commands: 
+
+  
+
+``` 
+
+git rm example.txt 
+
+git commit -m "Delete example.txt" 
+
+git push 
+
+```  
+
+  
+
+Note that these commands assume you are currently in the Git repository directory and have the necessary permissions to make changes. 
+
+ 
+
+ 
+
+How to restore a file: 
+
+ 
+
+The `git restore` command is used to restore files in a Git repository. It can be used to restore files to a previous commit or to discard local changes made to a file. Here are some examples: 
+
+  
+
+- To restore a file to its state in the last commit: `git restore filename` 
+
+  
+
+  This will replace the contents of the file with the version in the last commit. 
+
+  
+
+- To restore a file to its state in a specific commit: `git restore --source=commit_hash filename` 
+
+  
+
+  This will replace the contents of the file with the version in the specified commit. 
+
+ 
+
+  
+
+For example, if you want to restore a file named "example.txt" to its state in the last commit, you can use the following command: 
+
+  
+
+``` 
+
+git restore example.txt 
+
+``` 
+
+  
+
+If you want to discard local changes made to the file and restore it to its state in the last commit, you can use the following command: 
+
+  
+
+``` 
+
+git restore --staged example.txt 
+
+``` 
+
+  
+
+Note that these commands assume you are currently in the Git repository directory and have the necessary permissions to make changes. 
+
+ 
+
+ 
+
+ 
+
+The `git checkout <file_name>` command is used to discard changes made to a specific file in the working directory and replace it with the version from the most recent commit. This can be useful if you have made changes to a file and want to discard those changes and start over with the version from the last commit. 
+
+  
+
+Here's an example:  
+
+  
+
+Suppose you have made changes to a file named "example.txt" and want to discard those changes and restore the file to its state in the last commit. You can use the following command: 
+
+  
+
+``` 
+
+git checkout example.txt 
+
+``` 
+
+  
+
+This will replace the contents of "example.txt" with the version from the most recent commit, effectively discarding any local changes made to the file. 
+
+  
+
+Note that if you have already staged changes to the file using `git add`, you will need to unstage those changes first using `git reset` before using `git checkout` to discard the changes in the working directory. 
+
+ 
+
+ 
+
+ 
+
+GIT Restore: 
+
+ 
+
+Here's an example of how to use the `git restore` command and some of its use cases: 
+
+  
+
+Suppose you have made changes to a file named "example.txt" and want to restore it to its state in the last commit. You can use the following command: 
+
+  
+
+``` 
+
+git restore example.txt 
+
+``` 
+
+  
+
+This will replace the contents of "example.txt" with the version from the most recent commit, effectively discarding any local changes made to the file. 
+
+  
+
+Use cases for `git restore` include: 
+
+  
+
+1. Discarding local changes: If you have made changes to a file and want to discard those changes and start over with the version from the last commit, you can use `git restore` to restore the file to its previous state. 
+
+  
+
+2. Unstaging changes: If you have staged changes to a file using `git add` and want to unstage those changes, you can use `git restore --staged` followed by the filename to unstage the changes. 
+
+  
+
+3. Reverting to a previous commit: If you want to revert a file to its state in a previous commit, you can use `git restore --source=<commit>` followed by the filename to restore the file to its state in the specified commit. 
+
+  
+
+4. Restoring deleted files: If you have accidentally deleted a file and want to restore it, you can use `git restore` followed by the filename to restore the file to its previous state. 
+
+  
+
+Note that the `git restore` command was introduced in Git 2.23 and replaces the older `git checkout -- <file>` command for restoring files. 
+
+ 
+
+ 
+
+Undo the staged Changes: 
+
+ 
+
+ 
+
+This will unstage all changes that you have added to the staging area. If you want to unstage a specific file, you can specify the file name after the HEAD parameter: 
+
+  
+
+  
+
+``` 
+
+git reset HEAD <file> 
+
+git checkout <file> 
+
+``` 
+
+  
+
+The first command `git reset HEAD <file>` will unstage the changes for the specified file. The second command `git checkout <file>` will discard the changes made to the file and restore it to the last committed state. 
+
+  
+
+Note that if you have made changes to multiple files, you can use `git reset` to unstage all changes and then use `git checkout` to restore all files to the last committed state: 
+
+  
+
+``` 
+
+git reset HEAD 
+
+git checkout . 
+
+``` 
+
+  
+
+This will unstage all changes and restore all files to the last committed state. 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
