@@ -1,4 +1,5 @@
-**Deleting Branch in GIT: **
+
+**Delete Branch in GIT**
 
   
 
