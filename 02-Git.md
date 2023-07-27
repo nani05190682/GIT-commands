@@ -1,4 +1,4 @@
-Deleting Branch in GIT: 
+**Deleting Branch in GIT: **
 
   
 
@@ -60,7 +60,7 @@ To get back to the "feature" branch, you can use the following command: `git che
 
 
 
-GITIGNORE:
+**GITIGNORE:**
 
 `.gitignore` is a file in Git that allows you to specify files and directories that should be ignored by Git. This means that any changes made to these files or directories will not be tracked, committed, or pushed to the remote repository. 
 
