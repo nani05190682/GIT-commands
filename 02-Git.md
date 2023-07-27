@@ -57,3 +57,15 @@ Here's an example of how you can end up in a detached HEAD state:
   
 
 To get back to the "feature" branch, you can use the following command: `git checkout feature`. This will move your HEAD back to the "feature" branch head and any changes you make will be associated with the branch again. 
+
+
+
+GITIGNORE:
+
+`.gitignore` is a file in Git that allows you to specify files and directories that should be ignored by Git. This means that any changes made to these files or directories will not be tracked, committed, or pushed to the remote repository. 
+
+You can use `.gitignore` to exclude files like temporary files, log files, build artifacts, and other files that are not necessary to include in the repository. This can help keep your repository clean and prevent unnecessary files from being pushed to the remote repository. 
+
+To use `.gitignore`, you need to create a file called `.gitignore` in the root directory of your Git repository and list the files and directories you want to ignore. You can use wildcards and patterns to specify multiple files or directories at once. Once you have created the `.gitignore` file, Git will automatically ignore the specified files and directories.
+
+
