@@ -87,7 +87,7 @@ A "recursive" merge is a strategy that Git uses to combine commits from two bran
 
 The name "recursive" comes from the fact that this strategy will recursively merge common ancestors of the two branches until it has created a common base that can be used to combine the changes.
 
-Here's an example:
+**Here's an example:**
 
 1. You have a `main` branch and you create a new branch from it called `feature`.
 2. You make some commits to `feature`.
@@ -95,7 +95,7 @@ Here's an example:
 
 Now, if you want to merge `feature` back into `main`, you can't do a fast-forward merge because `main` has moved on since `feature` was branched off. The histories of the two branches have diverged. This is where a recursive merge comes in.
 
-The recursive merge strategy will:
+**The recursive merge strategy will:**
 
 1. Identify the common ancestor of the two branches (the commit where `feature` was branched off).
 2. Merge the changes made in `feature` with the changes made in `main`, using the common ancestor as the base.
