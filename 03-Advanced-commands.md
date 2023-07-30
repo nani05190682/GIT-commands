@@ -1,3 +1,6 @@
+# GIT reflog
+
+
 Add a new commit and reset back to one commit back
 
  $touch file1
