@@ -1,6 +1,11 @@
 Add a new commit and reset back to one commit back
+
  $touch file1
+
+ 
  $git add .
+ 
+ 
  $git commit -m "file1 added"
 
 
