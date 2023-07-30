@@ -1,11 +1,11 @@
 Add a new commit and reset back to one commit back
-# touch file1
-# git add .
-# git commit -m "file1 added"
+ $touch file1
+ $git add .
+ $git commit -m "file1 added"
 
 
 Now Reset the HEAD to one level back
-# git reset --hard HEAD~1
+  $git reset --hard HEAD~1
 
 Note: File2 will not be exists
 
@@ -14,18 +14,15 @@ The git reflog command is used to display a log of all the changes made to the l
 (e.g. branches, HEAD, tags) in reverse chronological order. 
 It can be useful for recovering lost commits or branches that were accidentally deleted or overwritten.
 
-answer again
-search the web for better answer
-New Chat
-GPT-4
 
-# git reflog
+
+git reflog
 # git reset --hard <hash> - it will bring back the file
 
 
 Lab Exercise:
 
-Sure! Here's a lab exercise for practicing the use of `git reflog`:
+Here's a lab exercise for practicing the use of `git reflog`:
 
 ## Objective
 The objective of this lab exercise is to practice using the `git reflog` command to recover lost commits or branches in a local Git repository.
