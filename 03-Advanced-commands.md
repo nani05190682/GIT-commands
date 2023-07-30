@@ -56,7 +56,7 @@ Merge Types:
 	2. Non Fast-Fast-Forward
 	
 
-##**What is fast-forward merge?**
+##What is fast-forward merge?
 
 A fast-forward merge in Git is a simple way to merge branches when the branch being merged into hasn't had any new commits since the branch being merged was created. 
 
