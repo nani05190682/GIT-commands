@@ -80,7 +80,7 @@ git merge --ff-only feature
 If the branches can't be fast-forwarded, Git will abort the merge and let you know it couldn't be done.
 
 
-What is recursive merge?
+## What is recursive merge?
 
 
 A "recursive" merge is a strategy that Git uses to combine commits from two branches in cases where a "fast-forward" merge is not possible. This usually occurs when there have been changes on both branches since they diverged.
