@@ -65,6 +65,9 @@ Merge Types:
 
 A fast-forward merge in Git is a simple way to merge branches when the branch being merged into hasn't had any new commits since the branch being merged was created. 
 
+When you run 'git log' only the head will move to feature branch, there would not be any commits.
+
+
 Here's an example:
 
 1. You have a branch called `main` and you create a new branch from it called `feature`.
