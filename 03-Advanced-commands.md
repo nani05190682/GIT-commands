@@ -88,6 +88,32 @@ git merge --ff-only feature
 If the branches can't be fast-forwarded, Git will abort the merge and let you know it couldn't be done.
 
 
+
+The `git merge --squash` command allows you to merge changes from one branch into another while only creating a single commit in the target branch. This can be useful if you want to keep the commit history of the target branch clean and simple.
+
+Here's an example of how to use `git merge --squash`:
+
+1. Start by checking out the branch you want to merge changes into. For example, if you want to merge changes from the "feature-branch" into "master", you would run:
+   ```
+   git checkout master
+   ```
+
+2. Next, run the `git merge --squash` command followed by the name of the branch you want to merge changes from. For example:
+   ```
+   git merge --squash feature-branch
+   ```
+
+3. Git will now apply all the changes from "feature-branch" into "master" but won't create a commit yet. Instead, it will stage all the changes and leave the commit message empty.
+
+4. You can now review the changes using `git status`, `git diff`, or any other Git command you prefer.
+
+5. Once you're satisfied with the changes, you can create a new commit with a custom commit message using `git commit`. For example:
+   ```
+   git commit -m "Merge changes from feature-branch"
+   ```
+
+
+
 ## What is recursive merge?
 
 
