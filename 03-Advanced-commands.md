@@ -137,3 +137,18 @@ Now, if you want to merge `feature` back into `main`, you can't do a fast-forwar
 4. Finally, it will create a new "merge commit" that brings together the changes from `main` and `feature`.
 
 So, when you run `git merge feature` while `main` is checked out, and there are commits on both `main` and `feature`, Git will use the recursive merge strategy by default. The result is a history that shows how both lines of development were brought together.
+
+# GIT rebase
+Git rebase is a command that allows you to move the changes made in one branch to another branch. It is used to integrate changes from one branch into another branch in a more linear manner than merging.
+
+Here's an example:
+
+Let's say you have two branches, `master` and `feature`. You are currently on the `feature` branch and have made some changes. Meanwhile, changes have also been made on the `master` branch. To integrate these changes into your `feature` branch, you can use the following command:
+
+```
+git rebase master
+```
+
+This will move your changes on top of the changes made on the `master` branch, resulting in a more linear history.
+
+It's important to note that using `git rebase` can change the commit history, so it should be used with caution.
