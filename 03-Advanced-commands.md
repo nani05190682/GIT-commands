@@ -138,6 +138,54 @@ Now, if you want to merge `feature` back into `main`, you can't do a fast-forwar
 
 So, when you run `git merge feature` while `main` is checked out, and there are commits on both `main` and `feature`, Git will use the recursive merge strategy by default. The result is a history that shows how both lines of development were brought together.
 
+
+
+Sure, here's a lab exercise for performing a non-fast forward merge in Git:
+
+1. Start by creating a new branch called `feature` and checking it out:
+
+   ```
+   git checkout -b feature
+   ```
+
+2. Make some changes to a file in the `feature` branch and commit them:
+
+   ```
+   # Make some changes to a file
+   git add .
+   git commit -m "Made some changes in the feature branch"
+   ```
+
+3. Switch back to the `main` branch:
+
+   ```
+   git checkout main
+   ```
+
+4. Make some changes to the same file in the `main` branch and commit them:
+
+   ```
+   # Make some changes to the same file
+   git add .
+   git commit -m "Made some changes in the main branch"
+   ```
+
+5. Merge the `feature` branch into `main` using the `--no-ff` flag to force a non-fast forward merge:
+
+   ```
+   git merge --no-ff feature
+   ```
+
+6. Git will open your default text editor to allow you to enter a commit message for the merge commit. Enter a meaningful message and save it.
+
+7. Finally, push your changes to the remote repository:
+
+   ```
+   git push origin main
+   ```
+
+Congratulations! You have successfully performed a non-fast forward merge in Git.
+
 # GIT rebase
 Git rebase is a command that allows you to move the changes made in one branch to another branch. It is used to integrate changes from one branch into another branch in a more linear manner than merging.
 
