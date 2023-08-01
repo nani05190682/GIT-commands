@@ -59,7 +59,15 @@ The objective of this lab exercise is to practice using the `git reflog` command
 Merge Types:
 	1. Fast-Forward
 	2. Non Fast-Fast-Forward
-	
+
+
+Difference betweem FF and No FF
+
+In a fast-forward merge, Git simply moves the pointer of the current branch forward to the commit of the other branch. This happens when the other branch has no new commits since the current branch was created. The result is a linear history with no additional merge commit.
+
+In a non-fast-forward merge, Git creates a new commit that combines the changes from both branches. This happens when the other branch has new commits since the current branch was created. The result is a history with a new merge commit that shows the changes from both branches.
+
+The --no-ff flag is used to force a non-fast-forward merge even if the other branch has no new commits. This is useful when you want to preserve the history of the merged branch and show that it was merged separately from the main branch.
 
 ##What is fast-forward merge?
 
