@@ -379,7 +379,6 @@ Sure, here's an example of how to merge two branches in Git:
     git merge bugfix-branch
     ```
 
-Congratulations, you have successfully merged two branches in Git! Now both the new feature and bug fix are incorporated into the main codebase.
 
 
 
