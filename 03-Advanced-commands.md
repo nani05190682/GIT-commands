@@ -155,7 +155,7 @@ git log
 
 You should see the commit you made in the `new-feature` branch.
 
-### Summary of Commands
+### HISTORY
 ```bash
 git branch new-feature
 git checkout new-feature
