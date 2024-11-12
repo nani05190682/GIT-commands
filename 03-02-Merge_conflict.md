@@ -129,15 +129,3 @@ Here's a practical exercise to help your students get hands-on experience with G
 
 ---
 
-## **Wrap-Up: Q&A Session**
-
-- **Suggested Questions for Discussion**:
-  1. What is the difference between a fast-forward merge and a three-way merge?
-  2. How can you view all the branches that have been merged into the current branch?
-     ```bash
-     git branch --merged
-     ```
-  3. What are some strategies to avoid frequent merge conflicts in a team environment?
-  
-
----
