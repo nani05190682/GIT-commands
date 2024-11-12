@@ -176,67 +176,68 @@ git log
 
 Merge Types:
 	1. Fast-Forward
-	2. Non Fast-Fast-Forward
 
+Let's dive into the types of Git merges: **Fast-Forward** 
 
-Difference betweem FF and No FF
+---
 
-In a fast-forward merge, Git simply moves the pointer of the current branch forward to the commit of the other branch. This happens when the other branch has no new commits since the current branch was created. The result is a linear history with no additional merge commit.
+### 1. Fast-Forward Merge
 
-In a non-fast-forward merge, Git creates a new commit that combines the changes from both branches. This happens when the other branch has new commits since the current branch was created. The result is a history with a new merge commit that shows the changes from both branches.
+A **Fast-Forward** merge happens when the branch you are merging into (e.g., `main`) has not diverged from the branch you are merging (`feature`). In this case, Git simply moves the `main` branch pointer forward to point to the latest commit on the `feature` branch.
 
-The --no-ff flag is used to force a non-fast-forward merge even if the other branch has no new commits. This is useful when you want to preserve the history of the merged branch and show that it was merged separately from the main branch.
+#### Example of Fast-Forward Merge
 
-##What is fast-forward merge?
-
-A fast-forward merge in Git is a simple way to merge branches when the branch being merged into hasn't had any new commits since the branch being merged was created. 
-
-When you run 'git log' only the head will move to feature branch, there would not be any commits.
-
-
-Here's an example:
-
-1. You have a branch called `main` and you create a new branch from it called `feature`.
-
-2. You make some commits to `feature`, but there are no new commits on `main`.
-
-In this case, a fast-forward merge is possible. Git will just move (or "fast forward") the `HEAD` pointer of the `main` branch to point to the latest commit of the `feature` branch. Essentially, Git just catches the `main` branch up with the `feature` branch, since the commits you made on the `feature` branch were based on the latest commit from `main` at the time the `feature` branch was created.
-
-If there had been any new commits on `main` after you checked out the `feature` branch, a fast-forward merge wouldn't be possible. In that case, you'd either have to use a different kind of merge (creating a new merge commit that includes both the new `main` and `feature` commits), or rebase your changes on top of the updated `main` branch before you could do a fast-forward merge. 
-
-You can force Git to use the fast-forward merge strategy when merging a branch with the `--ff-only` option, like so:
+**Step 1: Initialize a Git repository and create a file**
 
 ```bash
-git merge --ff-only feature
+git init
+echo "Initial commit" > file.txt
+git add file.txt
+git commit -m "Initial commit on main"
 ```
 
+**Step 2: Create and switch to a new branch**
 
-If the branches can't be fast-forwarded, Git will abort the merge and let you know it couldn't be done.
+```bash
+git checkout -b feature
+```
+
+**Step 3: Make changes in the `feature` branch**
+
+```bash
+echo "Feature work" >> file.txt
+git add file.txt
+git commit -m "Added feature work"
+```
+
+**Step 4: Switch back to the `main` branch**
+
+```bash
+git checkout main
+```
+
+**Step 5: Merge the `feature` branch into `main`**
+
+```bash
+git merge feature
+```
+
+**Outcome:**  
+- The `main` branch pointer is simply moved forward to point to the latest commit of the `feature` branch.
+- No new merge commit is created.
+- The history remains linear.
+
+**Git Log Output:**
+
+```
+* Added feature work (feature)
+* Initial commit on main
+```
+
+---
 
 
 
-The `git merge --squash` command allows you to merge changes from one branch into another while only creating a single commit in the target branch. This can be useful if you want to keep the commit history of the target branch clean and simple.
-
-Here's an example of how to use `git merge --squash`:
-
-1. Start by checking out the branch you want to merge changes into. For example, if you want to merge changes from the "feature-branch" into "master", you would run:
-   ```
-   git checkout master
-   ```
-
-2. Next, run the `git merge --squash` command followed by the name of the branch you want to merge changes from. For example:
-   ```
-   git merge --squash feature-branch
-   ```
-
-3. Git will now apply all the changes from "feature-branch" into "master" but won't create a commit yet. Instead, it will stage all the changes and leave the commit message empty.
-
-4. You can now review the changes using `git status`, `git diff`, or any other Git command you prefer.
-
-5. Once you're satisfied with the changes, you can create a new commit with a custom commit message using `git commit`. For example:
-   ```
-   git commit -m "Merge changes from feature-branch"
-   ```
 
 
 
