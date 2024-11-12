@@ -56,6 +56,124 @@ The objective of this lab exercise is to practice using the `git reflog` command
 
 
 
+### step-by-step solution for the given exercise:
+---
+
+### Step 1: Create a New Branch
+Create a new branch in your local Git repository.
+
+```bash
+git branch new-feature
+```
+
+### Step 2: Switch to the New Branch
+Switch to the newly created branch.
+
+```bash
+git checkout new-feature
+```
+
+Alternatively, you can use:
+
+```bash
+git switch new-feature
+```
+
+### Step 3: Make Changes and Commit Them
+Make some changes to a file (for example, `file.txt`), then add and commit those changes.
+
+```bash
+echo "Changes in new-feature branch" >> file.txt
+git add file.txt
+git commit -m "Added changes in new-feature branch"
+```
+
+### Step 4: Switch Back to the Main Branch
+Switch back to the `main` branch.
+
+```bash
+git checkout main
+```
+
+Alternatively:
+
+```bash
+git switch main
+```
+
+### Step 5: Make Changes on the Main Branch and Commit Them
+Make some changes on the `main` branch, then add and commit those changes.
+
+```bash
+echo "Changes in main branch" >> file.txt
+git add file.txt
+git commit -m "Added changes in main branch"
+```
+
+### Step 6: Delete the New Branch
+Delete the `new-feature` branch.
+
+```bash
+git branch -D new-feature
+```
+
+### Step 7: Use `git reflog` to Find the Commit Hash
+View the Git reference log to find the commit hash of the last known location of the deleted branch.
+
+```bash
+git reflog
+```
+
+Look for the entry that corresponds to the deleted `new-feature` branch commit. Note down the commit hash (let’s say it’s `abc1234`).
+
+### Step 8: Create a New Branch at the Commit Hash
+Create a new branch from the commit hash retrieved from the reflog.
+
+```bash
+git branch recovered-feature abc1234
+```
+
+### Step 9: Switch to the New Branch
+Switch to the newly created branch.
+
+```bash
+git checkout recovered-feature
+```
+
+Alternatively:
+
+```bash
+git switch recovered-feature
+```
+
+### Step 10: Verify Your Changes
+Verify that your changes from the original `new-feature` branch are present in the `recovered-feature` branch.
+
+```bash
+git log
+```
+
+You should see the commit you made in the `new-feature` branch.
+
+### Summary of Commands
+```bash
+git branch new-feature
+git checkout new-feature
+echo "Changes in new-feature branch" >> file.txt
+git add file.txt
+git commit -m "Added changes in new-feature branch"
+git checkout main
+echo "Changes in main branch" >> file.txt
+git add file.txt
+git commit -m "Added changes in main branch"
+git branch -D new-feature
+git reflog
+git branch recovered-feature <commit-hash>
+git checkout recovered-feature
+git log
+```
+
+
 Merge Types:
 	1. Fast-Forward
 	2. Non Fast-Fast-Forward
